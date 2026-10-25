@@ -118,7 +118,7 @@ strong{font-weight:700}
 /* about */
 .portrait{text-align:center;display:flex;flex-direction:column;align-items:center}
 .avatar{width:270px;height:270px;max-width:100%;border-radius:50%;object-fit:cover;display:block;margin:0 auto 20px}
-.portrait h2{font-size:1.75rem;font-weight:300;color:var(--heading);margin:0 0 10px}
+.portrait h2{font-size:1.75rem;font-weight:700;color:var(--heading);margin:0 0 10px}
 .portrait h3{font-family:var(--font-head);font-size:1rem;font-weight:300;color:var(--muted);margin:0 0 4px;line-height:1.5}
 .portrait h3 a{color:var(--muted)}
 .portrait h3 a:hover{color:var(--primary)}
@@ -253,7 +253,7 @@ figcaption .fig-num{font-weight:700}
 <section id="about" class="home-section">
 <div class="container split">
 <div class="portrait">
-<img class="avatar" src="images/avatar.jpg" alt="Ryan Crane" width="540" height="540">
+<img class="avatar" src="images/avatar.jpg" alt="Ryan Crane" width="303" height="303">
 <h2>Ryan Crane</h2>
 <h3>Mechanical Engineering Student</h3>
 <h3><a href="https://www.asu.edu/" target="_blank" rel="noopener">Arizona State University</a></h3>
@@ -265,9 +265,7 @@ figcaption .fig-num{font-weight:700}
 </div>
 <div class="section-content">
 <h1 class="about-title">About Me</h1>
-<p>I'm a mechanical engineering senior at Arizona State University in Barrett, the Honors College, also pursuing an M.S. in Robotics and Autonomous Systems. Most of my work sits where hardware meets living tissue. I build automation for organoid culture, co-authored a published bioreactor, and in 2026 designed analog circuits that emulate spiking neurons at Duke's NSF Athena AI Institute.</p>
-<p>I'm looking for mechanical engineering internships in <strong>surgical robotics and precision hardware</strong> for <strong>Summer 2027</strong>.</p>
-<div class="about-cols">
+<p>I'm a mechanical engineering senior at Arizona State University in Barrett, the Honors College, also pursuing an M.S. in Robotics and Autonomous Systems. Most of my work sits where hardware meets living tissue. I build automation for organoid culture, co-authored a published bioreactor, and in 2026 designed analog circuits that emulate spiking neurons at Duke's NSF Athena AI Institute.</p><div class="about-cols">
 <div>
 <h3>Interests</h3>
 <ul class="ul-interests">
@@ -275,6 +273,7 @@ figcaption .fig-num{font-weight:700}
 <li>Precision motion stages</li>
 <li>Laboratory automation</li>
 <li>Neuromorphic analog circuits</li>
+<li>Chip design and layout</li>
 </ul>
 </div>
 <div>
@@ -316,8 +315,17 @@ figcaption .fig-num{font-weight:700}
 <div class="exp-body"><div class="card exp-card">
 <h4 class="exp-title">Synthetic Biology Hardware Team Lead</h4>
 <h4 class="exp-company">iGEM Team, Arizona State University</h4>
-<div class="exp-meta">Mar 2024 – Nov 2025<span class="middot"></span>Tempe, AZ</div>
-<p>Built the OptoPACE continuous-culture bioreactor (published 2026), then led the hardware team through a portable electrochemical blood-typing sensor. Promoted from Hardware Engineer in Nov 2024. Team won Gold at the 2025 Grand Jamboree in Paris.</p>
+<div class="exp-meta">Nov 2024 – Nov 2025<span class="middot"></span>Tempe, AZ</div>
+<p>Led weekly hardware meetings and designed the 3D-printed enclosure for a portable electrochemical blood-typing sensor, revising it from stakeholder and expert interviews. Gave an oral talk and poster at the 2025 Grand Jamboree in Paris, where the team won Gold.</p>
+</div></div>
+</div>
+<div class="exp-row">
+<div class="exp-rail" aria-hidden="true"><span class="exp-dot"></span></div>
+<div class="exp-body"><div class="card exp-card">
+<h4 class="exp-title">Synthetic Biology Hardware Team Researcher</h4>
+<h4 class="exp-company">iGEM Team, Arizona State University</h4>
+<div class="exp-meta">Mar 2024 – Nov 2024<span class="middot"></span>Tempe, AZ</div>
+<p>Built the OptoPACE continuous-culture bioreactor (published 2026): 3D-printed housing, positive-pressure fluidic plumbing, soldered control circuits, and Arduino C++ firmware. Developed laser and photoresistor turbidity sensing to hold cultures at mid-log growth.</p>
 </div></div>
 </div>
 </div>
@@ -429,7 +437,7 @@ figcaption .fig-num{font-weight:700}
 <div class="container split">
 <div class="section-heading"><h1>Contact</h1></div>
 <div class="section-content">
-<p class="contact-intro">Looking for Summer 2027 mechanical engineering internships in surgical robotics and precision hardware.</p>
+<p class="contact-intro">Open to internships in precision hardware.</p>
 <ul class="contact-list">
 <li><svg class="icon " viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg><a href="mailto:rcrane4@asu.edu">rcrane4@asu.edu</a></li>
 <li><svg class="icon " viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg><a href="https://linkedin.com/in/ryan-crane1" target="_blank" rel="noopener">linkedin.com/in/ryan-crane1</a></li>
