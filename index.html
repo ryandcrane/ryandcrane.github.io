@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ryan Crane</title>
+<meta name="description" content="Ryan Crane, mechanical engineering student at Arizona State University. Organoid automation, precision focusing stages, a published bioreactor, and memristive silicon-neuron circuits.">
+<meta property="og:title" content="Ryan Crane">
+<meta property="og:description" content="Ryan Crane, mechanical engineering student at Arizona State University. Organoid automation, precision focusing stages, a published bioreactor, and memristive silicon-neuron circuits.">
+<meta property="og:type" content="website">
+<script>
+(function(){
+  var KEY='rc-theme';
+  function get(){try{return localStorage.getItem(KEY)||'auto'}catch(e){return 'auto'}}
+  function apply(m){var r=document.documentElement;
+    if(m==='light'||m==='dark'){r.setAttribute('data-theme',m)}else{r.removeAttribute('data-theme')}}
+  var m=get(); if(m!=='auto'){apply(m)}
+  window.rcTheme={get:get,set:function(m){try{localStorage.setItem(KEY,m)}catch(e){} apply(m)}};
+})();
+</script>
+<style>@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url('fonts/montserrat-latin-300-normal.woff2') format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/montserrat-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/montserrat-latin-700-normal.woff2') format('woff2')}
+@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/roboto-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Roboto';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/roboto-latin-400-italic.woff2') format('woff2')}
+@font-face{font-family:'Roboto';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/roboto-latin-700-normal.woff2') format('woff2')}</style>
+<style>
+/* Layout after Wowchemy "Academic": sticky navbar; each home section is a 1/3 title column + 2/3 content column. */
+:root{
+  --primary:#2962FF;
+  --bg:#FFFFFF; --sec-a:#FFFFFF; --sec-b:#F7F7F7;
+  --fg:rgba(0,0,0,.8); --heading:#313131; --title:rgba(0,0,0,.8);
+  --muted:rgba(0,0,0,.54); --faint:rgba(0,0,0,.6);
+  --nav-bg:#FFFFFF; --nav-link:#34495E; --brand:#2B2B2B; --nav-shadow:rgba(0,0,0,.11);
+  --card:#FFFFFF; --card-border:rgba(0,0,0,.125); --card-shadow:rgba(0,0,0,.2);
+  --rule:#DEE2E6; --tag-bg:#EFF1F3; --menu-bg:#FFFFFF; --menu-hover:#F1F3F5; --on-primary:#FFFFFF;
+  --font-head:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --font-body:'Roboto',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#23252F; --sec-a:#272935; --sec-b:#23252F;
+    --fg:#F8F8F2; --heading:#98A6AD; --title:rgba(255,255,255,.8);
+    --muted:rgba(255,255,255,.54); --faint:rgba(255,255,255,.6);
+    --nav-bg:#282A36; --nav-link:rgba(255,255,255,.8); --brand:#FFFFFF; --nav-shadow:rgba(255,255,255,.11);
+    --card:#343A40; --card-border:rgba(0,0,0,.125); --card-shadow:rgba(0,0,0,.2);
+    --rule:rgba(255,255,255,.18); --tag-bg:#3A3F47; --menu-bg:#343A40; --menu-hover:#3E454C;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#23252F; --sec-a:#272935; --sec-b:#23252F;
+  --fg:#F8F8F2; --heading:#98A6AD; --title:rgba(255,255,255,.8);
+  --muted:rgba(255,255,255,.54); --faint:rgba(255,255,255,.6);
+  --nav-bg:#282A36; --nav-link:rgba(255,255,255,.8); --brand:#FFFFFF; --nav-shadow:rgba(255,255,255,.11);
+  --card:#343A40; --card-border:rgba(0,0,0,.125); --card-shadow:rgba(0,0,0,.2);
+  --rule:rgba(255,255,255,.18); --tag-bg:#3A3F47; --menu-bg:#343A40; --menu-hover:#3E454C;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+@media (min-width:768px){html{font-size:18px}}
+@media (min-width:1200px){html{font-size:21px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:1rem;line-height:1.65;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:1031;background:var(--nav-bg)}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+h1,h2,h3,h4{font-family:var(--font-head);color:var(--heading);margin:0;line-height:1.25;text-wrap:balance}
+p{margin:0 0 1rem}
+img{max-width:100%}
+strong{font-weight:700}
+.icon{width:1em;height:1em;fill:currentColor;vertical-align:-.125em;flex:none}
+.container{width:100%;max-width:1200px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* navbar */
+.navbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:1030;background:var(--nav-bg);box-shadow:0 2px 4px var(--nav-shadow)}
+.nav-inner{position:relative;height:70px;display:flex;align-items:center;gap:20px}
+.brand{font-family:var(--font-body);font-weight:700;font-size:19.4px;color:var(--brand);white-space:nowrap}
+.brand:hover{text-decoration:none;color:var(--brand)}
+.nav-links{display:flex;list-style:none;margin:0;padding:0}
+.nav-links a{display:block;padding:5px 15px;font-family:var(--font-body);font-weight:700;font-size:16px;line-height:1.5;color:var(--nav-link);white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--primary);text-decoration:none}
+.nav-icons{margin-left:auto;display:flex;align-items:center}
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:40px;height:40px;padding:0 10px;
+  border:0;background:none;color:var(--nav-link);font:700 16px var(--font-body);cursor:pointer;border-radius:4px}
+.icon-btn:hover{color:var(--primary)}
+.theme{position:relative}
+.theme-menu{position:absolute;right:0;top:calc(100% + 8px);min-width:10rem;padding:.4rem 0;margin:0;list-style:none;
+  background:var(--menu-bg);border:1px solid var(--card-border);border-radius:4px;box-shadow:0 4px 12px var(--card-shadow);font-size:16px}
+.theme-menu button{display:block;width:100%;text-align:left;padding:.35rem 1.25rem;border:0;background:none;color:var(--fg);font:400 16px var(--font-body);cursor:pointer}
+.theme-menu button:hover{background:var(--menu-hover)}
+.theme-menu button[aria-checked="true"]{color:var(--primary);font-weight:700}
+.nav-toggler{display:none}
+@media (max-width:991.98px){
+  .nav-inner{display:grid;grid-template-columns:1fr auto 1fr;gap:8px}
+  .nav-toggler{display:inline-flex;justify-self:start;padding-left:0}
+  .brand{justify-self:center}
+  .nav-icons{justify-self:end;margin-left:0}
+  .nav-links{display:none;position:absolute;left:0;right:0;top:70px;flex-direction:column;background:var(--nav-bg);
+    padding:.5rem max(16px,env(safe-area-inset-left,0px)) .75rem;box-shadow:0 4px 6px var(--nav-shadow)}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:.5rem 0}
+}
+
+/* home sections */
+.home-section{padding:60px 0;background:var(--sec-a)}
+.home-section.alt{background:var(--sec-b)}
+#about{padding-top:40px}
+.split{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem 30px}
+@media (min-width:992px){.split{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}}
+.section-heading h1{font-size:2.25rem;font-weight:400;margin:0}
+.section-content{min-width:0}
+
+/* about */
+.portrait{text-align:center;display:flex;flex-direction:column;align-items:center}
+.avatar{width:270px;height:270px;max-width:100%;border-radius:50%;object-fit:cover;display:block;margin:0 auto 20px}
+.portrait h2{font-size:1.75rem;font-weight:700;color:var(--heading);margin:0 0 10px}
+.portrait h3{font-family:var(--font-head);font-size:1rem;font-weight:300;color:var(--muted);margin:0 0 4px;line-height:1.5}
+.portrait h3 a{color:var(--muted)}
+.portrait h3 a:hover{color:var(--primary)}
+.network-icon{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;list-style:none;padding:0;margin:30px 0 0}
+.network-icon a{color:var(--primary);display:inline-flex}
+.network-icon .icon{width:2rem;height:2rem}
+.about-title{font-size:2.25rem;font-weight:400;margin:0 0 1rem}
+.about-cols{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem 30px;margin-top:1.25rem}
+@media (min-width:768px){.about-cols{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}}
+.about-cols h3{font-size:1.4rem;font-weight:400;margin:0 0 .6rem}
+.ul-interests{margin:0;padding-left:1.2rem;font-size:.9rem}
+.ul-interests li{margin-bottom:.15rem}
+.ul-edu{list-style:none;margin:0;padding:0}
+.ul-edu li{display:grid;grid-template-columns:1.6rem minmax(0,1fr);gap:.4rem;margin-bottom:.6rem}
+.ul-edu .icon{width:1.1rem;height:1.1rem;margin-top:.2rem;color:var(--fg)}
+.ul-edu .course{font-size:.9rem;margin:0;line-height:1.45}
+.ul-edu .institution{font-size:.75rem;margin:0;color:var(--faint)}
+
+/* experience timeline */
+.exp-row{display:grid;grid-template-columns:2.6rem minmax(0,1fr)}
+.exp-rail{position:relative}
+.exp-rail::before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:1px solid var(--rule)}
+.exp-row:first-child .exp-rail::before{top:50%}
+.exp-row:last-child .exp-rail::before{bottom:50%}
+.exp-dot{position:absolute;left:50%;top:50%;width:.9rem;height:.9rem;transform:translate(-50%,-50%);border-radius:50%;
+  background:var(--primary);box-shadow:0 0 0 3px var(--sec-b)}
+.exp-body{padding:.6rem 0;min-width:0}
+@media (max-width:575.98px){.exp-row{grid-template-columns:minmax(0,1fr)}.exp-rail{display:none}}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:.25rem;box-shadow:0 2px 4px var(--card-shadow)}
+.exp-card{padding:1.25rem}
+.exp-title{font-size:.9rem;font-weight:700;color:var(--title);margin:0 0 .25rem}
+.exp-company{font-size:.9rem;font-weight:400;margin:0;color:var(--title)}
+.exp-meta{font-size:max(13px,.7rem);color:var(--muted);margin:.15rem 0 .6rem}
+.exp-card p{font-size:.9rem;margin:0}
+.middot::before{content:"·";margin:0 .45em}
+
+/* project cards */
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px;align-items:start}
+.projects.masonry{display:flex;align-items:flex-start}
+.projects .mcol{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:20px}
+.project-card{overflow:hidden}
+.project-card .card-image{display:block;line-height:0}
+.project-card img{display:block;width:100%;height:auto;transition:opacity .2s}
+.project-card .card-image:hover img{opacity:.85}
+.project-card .card-text{padding:.75rem 1rem 1rem}
+.project-card h4{font-size:.9rem;font-weight:700;text-transform:uppercase;line-height:1.45;margin:.35rem 0 .5rem}
+.project-card p{font-size:.8rem;line-height:1.6;margin:0}
+
+/* talks + publications */
+.stream-item{margin-bottom:2rem}
+.stream-item:last-child{margin-bottom:0}
+.stream-item h3{font-size:1.2rem;font-weight:700;margin:0;line-height:1.35}
+.stream-item h3 a{color:var(--heading)}
+.stream-item h3 a:hover{color:var(--primary);text-decoration:none}
+.stream-item .summary{margin:.3rem 0 0}
+.stream-meta{font-size:max(13px,.7rem);color:var(--muted);margin:.3rem 0 0}
+.btn-links{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.5rem}
+.btn-outline{display:inline-flex;align-items:center;gap:.35em;font:400 max(12px,.6rem)/1.5 var(--font-body);padding:.3rem .55rem;
+  border:1px solid var(--primary);border-radius:.2rem;color:var(--primary)}
+.btn-outline:hover{background:var(--primary);color:var(--on-primary);text-decoration:none}
+.more-note{font-size:.9rem;color:var(--muted);margin:1.5rem 0 0}
+
+/* contact */
+.contact-intro{margin:0 0 1.5rem}
+.contact-list{list-style:none;margin:0;padding:0}
+.contact-list li{display:flex;align-items:center;gap:1.2rem;margin-bottom:.8rem;min-width:0}
+.contact-list .icon{width:2rem;height:2rem;color:var(--fg)}
+.contact-list span,.contact-list a{overflow-wrap:anywhere}
+
+/* footer */
+.site-footer{padding:42px 0;font-size:max(13px,.7rem);color:var(--muted)}
+.site-footer p{margin:0 0 .4rem}
+.site-footer a{color:var(--muted);text-decoration:underline}
+.footer-row{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.back-to-top{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;color:var(--muted);text-decoration:none!important}
+.back-to-top .icon{width:1.1rem;height:1.1rem}
+
+/* project pages */
+.article{padding:40px 0 20px}
+.article-container{max-width:800px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.article-title{font-size:2.25rem;font-weight:400;margin:0 0 .6rem}
+.article-lead{font-size:1.1rem;color:var(--fg);margin:0 0 .6rem}
+.article-metadata{font-size:max(13px,.7rem);color:var(--muted);margin:0}
+.featured{margin:1.5rem 0 0}
+.featured img{display:block;width:100%;height:auto;max-height:75vh;object-fit:contain;border-radius:.25rem}
+.article-style{margin-top:1rem}
+.article-style h2{font-size:1.45rem;font-weight:400;margin:2rem 0 .7rem}
+.article-style figure{margin:1.5rem 0}
+.article-style figure img{display:block;width:100%;height:auto;border-radius:.25rem}
+.article-style figure.narrow img{max-width:520px;margin:0 auto}
+.article-style figure.pad img{background:#FFFFFF;padding:.5rem;border:1px solid var(--card-border)}
+figcaption{font-size:max(13px,.72rem);line-height:1.5;color:var(--muted);text-align:center;margin-top:.5rem}
+figcaption .fig-num{font-weight:700}
+.fig-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1.5rem 0;align-items:start}
+.fig-grid figure{margin:0}
+@media (max-width:575.98px){.fig-grid{grid-template-columns:minmax(0,1fr)}}
+.constraints{margin:0 0 1rem;padding-left:1.6rem;font-size:.95rem}
+@media (min-width:768px){.constraints{columns:2;column-gap:2.5rem}}
+.constraints li{break-inside:avoid;margin-bottom:.3rem;padding-left:.2rem}
+.table-wrap{overflow-x:auto;margin:0 0 1rem}
+.spec{border-collapse:collapse;width:100%;max-width:520px;font-size:.9rem}
+.spec th,.spec td{border-bottom:1px solid var(--rule);padding:.45rem .6rem;text-align:left;vertical-align:top}
+.spec th{font-weight:400;color:var(--muted);width:45%}
+.spec td{font-variant-numeric:tabular-nums}
+.article-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:2rem 0 1rem}
+.tag{font-size:max(12px,.65rem);padding:.25rem .6rem;border-radius:.2rem;background:var(--tag-bg);color:var(--fg)}
+.article-back{margin:1.5rem 0 2rem}
+.article-back a{display:inline-flex;align-items:center;gap:.45em}
+</style>
+</head>
+<body>
+<!-- Icons: Font Awesome Free 5.15.4 by @fontawesome, https://fontawesome.com License https://fontawesome.com/license/free (Icons: CC BY 4.0) -->
+<nav class="navbar" id="top" aria-label="Main">
+<div class="container nav-inner">
+<button class="icon-btn nav-toggler" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu"><svg class="icon " viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg><span>Menu</span></button>
+<a class="brand" href="#about">Ryan Crane</a>
+<ul class="nav-links" id="nav-menu"><li><a href="#about" data-spy="about">Home</a></li><li><a href="#experience" data-spy="experience">Experience</a></li><li><a href="#projects" data-spy="projects">Projects</a></li><li><a href="#talks" data-spy="talks">Talks</a></li><li><a href="#publications" data-spy="publications">Publications</a></li><li><a href="#contact" data-spy="contact">Contact</a></li><li><a href="Ryan_Crane_CV.pdf" target="_blank" rel="noopener">CV</a></li></ul>
+<div class="nav-icons">
+<div class="theme">
+<button class="icon-btn" id="theme-btn" aria-haspopup="true" aria-expanded="false" aria-controls="theme-menu" aria-label="Display theme"><svg class="icon " viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path></svg></button>
+<div class="theme-menu" id="theme-menu" role="menu" hidden>
+<button role="menuitemradio" data-mode="light" aria-checked="false">Light</button>
+<button role="menuitemradio" data-mode="dark" aria-checked="false">Dark</button>
+<button role="menuitemradio" data-mode="auto" aria-checked="true">Automatic</button>
+</div>
+</div>
+</div>
+</div>
+</nav>
+
+<section id="about" class="home-section">
+<div class="container split">
+<div class="portrait">
+<img class="avatar" src="images/avatar.jpg" alt="Ryan Crane" width="330" height="330">
+<h2>Ryan Crane</h2>
+<h3>Mechanical Engineering Student</h3>
+<h3><a href="https://www.asu.edu/" target="_blank" rel="noopener">Arizona State University</a></h3>
+<ul class="network-icon" aria-label="Links">
+<li><a href="#contact" aria-label="Email"><svg class="icon " viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg></a></li>
+<li><a href="https://linkedin.com/in/ryan-crane1" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon " viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a></li>
+<li><a href="Ryan_Crane_CV.pdf" target="_blank" rel="noopener" aria-label="CV (PDF)"><svg class="icon " viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"></path></svg></a></li>
+</ul>
+</div>
+<div class="section-content">
+<h1 class="about-title">About Me</h1>
+<p>I'm a mechanical engineering senior at Arizona State University in Barrett, the Honors College, also pursuing an M.S. in Robotics and Autonomous Systems. Most of my work sits where hardware meets living tissue. I build automation for organoid culture, co-authored a published bioreactor, and in 2026 designed analog circuits that emulate spiking neurons at Duke's NSF Athena AI Institute.</p><div class="about-cols">
+<div>
+<h3>Interests</h3>
+<ul class="ul-interests">
+<li>Surgical and medical robotics</li>
+<li>Precision motion stages</li>
+<li>Laboratory automation</li>
+<li>Neuromorphic analog circuits</li>
+<li>Chip design and layout</li>
+</ul>
+</div>
+<div>
+<h3>Education</h3>
+<ul class="ul-edu">
+<li><svg class="icon " viewBox="0 0 640 512" aria-hidden="true" focusable="false"><path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg><div><p class="course">M.S. Robotics and Autonomous Systems, expected 2028</p><p class="institution">Arizona State University</p></div></li>
+<li><svg class="icon " viewBox="0 0 640 512" aria-hidden="true" focusable="false"><path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg><div><p class="course">B.S.E. Mechanical Engineering, minor in Data Science, expected 2027</p><p class="institution">Arizona State University, Barrett Honors College · GPA 3.88</p></div></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="experience" class="home-section alt">
+<div class="container split">
+<div class="section-heading"><h1>Experience</h1></div>
+<div class="section-content">
+<div class="exp-row">
+<div class="exp-rail" aria-hidden="true"><span class="exp-dot"></span></div>
+<div class="exp-body"><div class="card exp-card">
+<h4 class="exp-title">Electrical Engineering Research Assistant</h4>
+<h4 class="exp-company"><a href="https://athena.duke.edu/" target="_blank" rel="noopener">NSF Athena AI Institute for Edge Computing, Duke University</a></h4>
+<div class="exp-meta">May 2026 – Present<span class="middot"></span>Durham, NC</div>
+<p>Designed a memristive CMOS synapse coupling two subthreshold silicon neurons (LIF and Izhikevich) in Cadence Virtuoso and routed the chip package in KLayout. Built Python spiking-network simulations comparing it with simple and cascode mirror synapses under process variation. Co-authoring a conference submission.</p>
+</div></div>
+</div>
+<div class="exp-row">
+<div class="exp-rail" aria-hidden="true"><span class="exp-dot"></span></div>
+<div class="exp-body"><div class="card exp-card">
+<h4 class="exp-title">Laboratory Automation Engineer</h4>
+<h4 class="exp-company">BioProtean Lab, Arizona State University</h4>
+<div class="exp-meta">Jan 2025 – Present<span class="middot"></span>Tempe, AZ</div>
+<p>Sole engineer on a vision-guided organoid culture workcell, from concept through testing: a well-scanning microscope, a motorized focusing stage, an XY stage inside an Opentrons OT-2, segmentation-guided pipetting, and a reBot arm for plate transfer. Designed and printed 50+ custom SolidWorks parts.</p>
+</div></div>
+</div>
+<div class="exp-row">
+<div class="exp-rail" aria-hidden="true"><span class="exp-dot"></span></div>
+<div class="exp-body"><div class="card exp-card">
+<h4 class="exp-title">Synthetic Biology Hardware Team Lead</h4>
+<h4 class="exp-company">iGEM Team, Arizona State University</h4>
+<div class="exp-meta">Nov 2024 – Nov 2025<span class="middot"></span>Tempe, AZ</div>
+<p>Led weekly hardware meetings and designed the 3D-printed enclosure for a portable electrochemical blood-typing sensor, revising it from stakeholder and expert interviews. Gave an oral talk and poster at the 2025 Grand Jamboree in Paris, where the team won Gold.</p>
+</div></div>
+</div>
+<div class="exp-row">
+<div class="exp-rail" aria-hidden="true"><span class="exp-dot"></span></div>
+<div class="exp-body"><div class="card exp-card">
+<h4 class="exp-title">Synthetic Biology Hardware Team Researcher</h4>
+<h4 class="exp-company">iGEM Team, Arizona State University</h4>
+<div class="exp-meta">Mar 2024 – Nov 2024<span class="middot"></span>Tempe, AZ</div>
+<p>Built the OptoPACE continuous-culture bioreactor (published 2026): 3D-printed housing, positive-pressure fluidic plumbing, soldered control circuits, and Arduino C++ firmware. Developed laser and photoresistor turbidity sensing to hold cultures at mid-log growth.</p>
+</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="projects" class="home-section">
+<div class="container split">
+<div class="section-heading"><h1>Selected Projects</h1></div>
+<div class="section-content">
+<div class="projects" id="project-grid">
+<div class="card project-card">
+<a href="project/organoid-workcell.html" class="card-image" tabindex="-1" aria-hidden="true"><img src="images/cards/01hero_arm.jpg" alt="" width="550" height="412" loading="lazy" decoding="async"></a>
+<div class="card-text">
+<h4><a href="project/organoid-workcell.html">Organoid Culture Workcell</a></h4>
+<p>Microscope, well-scanning stage, pipetting robot, and robot arm that feed and image living human organoids without the pipette touching them. Sole engineer.</p>
+</div>
+</div>
+<div class="card project-card">
+<a href="project/focusing-stage.html" class="card-image" tabindex="-1" aria-hidden="true"><img src="images/cards/02stagebuilt.jpg" alt="" width="550" height="412" loading="lazy" decoding="async"></a>
+<div class="card-text">
+<h4><a href="project/focusing-stage.html">Motorized Focusing Stage</a></h4>
+<p>Stepper and lead-screw Z stage for a 10X objective, 0.625 µm per step, with GRBL autofocus. Drift, backlash, and friction fixed with a stronger key and a redesigned casing.</p>
+</div>
+</div>
+<div class="card project-card">
+<a href="project/optopace-bioreactor.html" class="card-image" tabindex="-1" aria-hidden="true"><img src="images/cards/10opb.jpg" alt="" width="550" height="516" loading="lazy" decoding="async"></a>
+<div class="card-text">
+<h4><a href="project/optopace-bioreactor.html">OptoPACE Bioreactor</a></h4>
+<p>Turbidostat for phage-assisted continuous evolution, with light setting the selection pressure. Published 2026, co-first author.</p>
+</div>
+</div>
+<div class="card project-card">
+<a href="project/blood-typing-sensor.html" class="card-image" tabindex="-1" aria-hidden="true"><img src="images/cards/14p2antigen.jpg" alt="" width="550" height="510" loading="lazy" decoding="async"></a>
+<div class="card-text">
+<h4><a href="project/blood-typing-sensor.html">Electrochemical Sensor Enclosure</a></h4>
+<p>Printed enclosure for an ESP32 potentiostat that reads blood-type antigens by cyclic voltammetry, built for an emergency blood-conversion kit. Led the iGEM hardware team.</p>
+</div>
+</div>
+<div class="card project-card">
+<a href="project/organoid-fem.html" class="card-image" tabindex="-1" aria-hidden="true"><img src="images/cards/17bstress.jpg" alt="" width="550" height="298" loading="lazy" decoding="async"></a>
+<div class="card-text">
+<h4><a href="project/organoid-fem.html">Organoid Finite Element Model</a></h4>
+<p>Ported a published organoid mechanics model from Abaqus to open-source FEniCS and compared von Mises stress across three maturity stages.</p>
+</div>
+</div>
+<div class="card project-card">
+<a href="project/memristive-synapse.html" class="card-image" tabindex="-1" aria-hidden="true"><img src="images/cards/06spikemodes.jpg" alt="" width="550" height="180" loading="lazy" decoding="async"></a>
+<div class="card-text">
+<h4><a href="project/memristive-synapse.html">Memristive Synapse</a></h4>
+<p>Analog CMOS synapse that stores its weight in a memristor. One circuit produces eight cortical firing patterns.</p>
+</div>
+</div>
+<div class="card project-card">
+<a href="project/failsafe.html" class="card-image" tabindex="-1" aria-hidden="true"><img src="images/cards/19mask.jpg" alt="" width="550" height="490" loading="lazy" decoding="async"></a>
+<div class="card-text">
+<h4><a href="project/failsafe.html">FailSafe Defect Analysis</a></h4>
+<p>Fine-tuned SegFormer that segments porosity in SEM fractographs of printed Ti64, then hands the defect metrics to an LLM for failure diagnosis.</p>
+</div>
+</div>
+<div class="card project-card">
+<a href="project/asl-glove.html" class="card-image" tabindex="-1" aria-hidden="true"><img src="images/cards/20glove.jpg" alt="" width="550" height="357" loading="lazy" decoding="async"></a>
+<div class="card-text">
+<h4><a href="project/asl-glove.html">ASL-Translating Glove</a></h4>
+<p>ESP32 glove with DIY copper-tape flex sensors that maps handshapes to letters.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="talks" class="home-section alt">
+<div class="container split">
+<div class="section-heading"><h1>Talks</h1></div>
+<div class="section-content">
+<div class="stream-item">
+<h3><a href="project/organoid-workcell.html">Machine Vision-Enabled Laboratory Automation for Scalable Organoid Culture</a></h3>
+<p class="summary">The organoid workcell: segmentation-guided pipetting, a well-scanning microscope, and plate transfer by robot arm.</p>
+<div class="stream-meta">2026 · Beckman Scholars Symposium · Irvine, CA</div>
+<div class="btn-links"><a class="btn-outline" href="project/organoid-workcell.html">Project</a></div>
+</div>
+<div class="stream-item">
+<h3>iGEM Grand Jamboree 2025: Talk and Poster</h3>
+<p class="summary">Oral talk and poster for 100+ scientists and entrepreneurs. The team won a Gold Medal.</p>
+<div class="stream-meta">2025 · iGEM Grand Jamboree · Paris, France</div>
+
+</div>
+<p class="more-note">Nine conference presentations in all, two of them oral. The full list is in my CV.</p>
+</div>
+</div>
+</section>
+
+<section id="publications" class="home-section">
+<div class="container split">
+<div class="section-heading"><h1>Publications</h1></div>
+<div class="section-content">
+<div class="stream-item">
+<h3><a href="https://ojs.lib.uwo.ca/index.php/openhardware/article/view/23162/18687" target="_blank" rel="noopener">The OptoPACE Bioreactor: An Accessible Turbidostat System with Phage-Assisted Continuous Evolution Capability and Optogenetic Controls</a></h3>
+<p class="summary">Journal of Open Hardware, 2026.</p>
+<div class="stream-meta"><strong>Ryan D. Crane*</strong>, W. T. Isaacs*, M. Ijaz*, et al. &nbsp;(*equal contribution)</div>
+<div class="btn-links"><a class="btn-outline" href="https://ojs.lib.uwo.ca/index.php/openhardware/article/view/23162/18687" target="_blank" rel="noopener">PDF</a><a class="btn-outline" href="project/optopace-bioreactor.html">Project</a></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="home-section alt">
+<div class="container split">
+<div class="section-heading"><h1>Contact</h1></div>
+<div class="section-content">
+<p class="contact-intro">Open to internships in precision hardware.</p>
+<ul class="contact-list">
+<li><svg class="icon " viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg><a href="mailto:rcrane4@asu.edu">rcrane4@asu.edu</a></li>
+<li><svg class="icon " viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg><a href="https://linkedin.com/in/ryan-crane1" target="_blank" rel="noopener">linkedin.com/in/ryan-crane1</a></li>
+<li><svg class="icon " viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg><span>Tempe, Arizona</span></li>
+</ul>
+</div>
+</div>
+</section>
+
+<footer class="site-footer">
+<div class="container footer-row">
+<div>
+<p>© 2026 Ryan Crane</p>
+<p>Layout adapted from the open-source <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">Wowchemy Academic</a> theme.</p>
+</div>
+<a href="#top" class="back-to-top" aria-label="Back to top"><svg class="icon " viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></a>
+</div>
+</footer>
+<script>
+(function(){
+  /* theme menu: Light / Dark / Automatic */
+  var btn=document.getElementById('theme-btn'), menu=document.getElementById('theme-menu');
+  function mark(){var cur=window.rcTheme.get();
+    menu.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-checked',String(b.dataset.mode===cur))});}
+  function close(){menu.hidden=true;btn.setAttribute('aria-expanded','false')}
+  btn.addEventListener('click',function(e){e.stopPropagation();var open=menu.hidden;menu.hidden=!open;
+    btn.setAttribute('aria-expanded',String(open));mark();});
+  menu.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+    window.rcTheme.set(b.dataset.mode);mark();close();btn.focus();});
+  document.addEventListener('click',function(e){if(!menu.hidden&&!menu.contains(e.target))close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){close();closeNav()}});
+
+  /* mobile menu */
+  var tog=document.getElementById('nav-toggle'), links=document.getElementById('nav-menu');
+  function closeNav(){links.classList.remove('open');tog.setAttribute('aria-expanded','false')}
+  tog.addEventListener('click',function(){var o=links.classList.toggle('open');tog.setAttribute('aria-expanded',String(o))});
+  links.addEventListener('click',function(e){if(e.target.closest('a'))closeNav()});
+
+  /* back to top */
+  document.querySelectorAll('.back-to-top').forEach(function(a){a.addEventListener('click',function(e){
+    e.preventDefault();window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});});
+
+  /* scrollspy (home page only) */
+  var spy=[].slice.call(document.querySelectorAll('.nav-links a[data-spy]'));
+  if(spy.length&&'IntersectionObserver' in window){
+    var byId={};spy.forEach(function(a){byId[a.dataset.spy]=a});
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){
+      spy.forEach(function(a){a.classList.remove('active')});var a=byId[en.target.id];if(a)a.classList.add('active');}})},
+      {rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(byId).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s)});
+  }
+
+  /* masonry for project cards, filling left to right like Wowchemy's isotope layout */
+  var grid=document.getElementById('project-grid');
+  if(grid){
+    var cards=[].slice.call(grid.querySelectorAll('.project-card')), lastN=0;
+    function layout(){
+      var w=grid.clientWidth, n=w>=640?3:(w>=400?2:1);
+      if(n===lastN)return; lastN=n;
+      grid.classList.add('masonry'); grid.innerHTML='';
+      var cols=[];for(var i=0;i<n;i++){var c=document.createElement('div');c.className='mcol';grid.appendChild(c);cols.push(c)}
+      cards.forEach(function(card){var best=cols[0];
+        cols.forEach(function(c){if(c.offsetHeight<best.offsetHeight-1)best=c});best.appendChild(card);});
+    }
+    layout(); var t; window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(layout,120)});
+  }
+})();
+</script>
+</body>
+</html>
